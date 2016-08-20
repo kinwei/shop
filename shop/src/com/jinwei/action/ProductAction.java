@@ -28,9 +28,14 @@ public class ProductAction extends BaseAction<Product> {
 		return "jsonMap";
 	}
 	
-	public void save() throws IOException{
+	public void save(){
 		String pic = fileUpload.uploadFile(fileImage);
 		model.setPic(pic);
 		productService.save(model);
+	}
+	
+	public String get(){
+		request.put("product",productService.get(model.getId()));
+		return "detail";
 	}
 }

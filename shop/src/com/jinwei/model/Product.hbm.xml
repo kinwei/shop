@@ -39,7 +39,7 @@
             <column name="cid" />
         </property>
         -->
-        <many-to-one name="category" class="Category">
+        <many-to-one name="category" class="Category" lazy="false">
         	<column name="cid" />
         </many-to-one>
        

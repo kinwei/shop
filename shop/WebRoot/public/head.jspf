@@ -10,3 +10,6 @@
 <script type="text/javascript" src="${shop }/jquery-easyui-1.3.5/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src=""></script>
 <style type="text/css"></style>
+<link rel="stylesheet" href="${shop }/css/public.css" />
+<link rel="stylesheet" href="${shop }/css/register.css" />
+<link rel="stylesheet" href="${shop }/css/style.css" />

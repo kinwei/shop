@@ -47,6 +47,11 @@
 					rows\[\d+\]\.category\.account
 				</param>
 			</result>
+			
+			<result name="detail">
+				/detail.jsp
+			</result>
+			
 		</action>
 		
 		<!-- 用来完成系统请求转发的action -->
