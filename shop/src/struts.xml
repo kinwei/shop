@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="shop" extends="json-default">
+		<global-results>
+			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
+		</global-results>
+			
+		<action name="category_*" class="categoryAction" method="{1}">
+			<result name="index">/index.jsp</result>
+			<result name="jsonMap" type="json" >
+				<param name="root">pageMap</param>
+				<param name="excludeProperties">
+					rows\[\d+\]\.account\.pass,
+					rows\[\d+\]\.account\.name
+				</param>
+			</result>
+			
+			<result name="jsonList" type="json">
+				<param name="root">jsonList</param>
+				<param name="excludeProperties">
+					\[\d+\]\.account,\[\d+\]\.hot
+				</param>
+			</result>
+			
+			<result name="stream" type="stream">
+				<param name="inputStream">inputStream</param>
+			</result>
+			
+		</action>
+		
+		<action name="account_*" class="accountAction" method="{1}">
+			<result name="index">/index.jsp</result>
+			<result name="jsonList" type="json">
+				<param name="root">jsonList</param>
+				<param name="excludeProperties">
+					\[\d+\]\.pass,
+					\[\d+\]\.name
+				</param>
+			</result>
+		</action>
+		
+		<action name="product_*" class="productAction" method="{1}">
+			<result name="jsonMap" type="json" >
+				<param name="root">pageMap</param>
+				<param name="excludeProperties">
+					rows\[\d+\]\.category\.account
+				</param>
+			</result>
+		</action>
+		
+		<!-- 用来完成系统请求转发的action -->
+		<action name="send_*_*" class="sendAction">
+			<result name="send">/WEB-INF/{1}/{2}.jsp</result>
+		</action>
+	</package>
+</struts>    
