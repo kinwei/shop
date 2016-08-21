@@ -8,3 +8,13 @@
 
 	1.2：HQL：此方式默认是用来操作多条记录的。 List() executeUpdata() 二级缓存的配置包括read-only默认是无效的。 注意hql是没有save方法，如果需要插入数据只能调用session.save()
 
+相应语句的执行流程：
+get() load():如果二级缓存中存在，则流程为：1->4 如果缓存中不存在 1->2->3->4
+
+
+delete() update():先回去更新二级缓存中数据，但是如果缓存配置为：read-only 则更新失败
+save():添加数据直接交给数据库 因为read-only是无效 
+
+HQL：此方式默认不支持缓存
+list():查询多个  只存不取 交给二级缓存是给get load()使用
+executeUpdate():不支持二级缓存 直接到数据库更新 Hibernate会保证数据库与缓存同步

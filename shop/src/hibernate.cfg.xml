@@ -34,6 +34,8 @@
 	<mapping resource="com/jinwei/model/Product.hbm.xml" />
 	<!-- 配置哪些类支持缓存 -->
 	<class-cache usage="read-write" class="com.jinwei.model.Product"/>
+	<class-cache usage="read-write" class="com.jinwei.model.Category"/>
+	
 
 </session-factory>
 
