@@ -1,1 +1,10 @@
-注解与xml的比较:
+1:Hibernate查询策略：
+	有两种查询方式，第一种为session 第二章为hql
+	
+	Hibernate中的一级缓存它也称为session级别缓存 不是用来提升性能的 用来处理事务的 二级缓存为sessionFactory缓存 对所有的session都有效 生命周期与sessionFactory相同（sessionFactory是但例的
+
+	1.1 session.save() update() delete() load():此方式仅仅操作一条记录，默认不用任何配置就支持二级缓存 因此：read-only 对session是生效的
+	在session中如果二级缓存中配置了 read-only 则 session.update，delete操作会失败，但是 save（）和get() load() 是成功的
+
+	1.2：HQL：此方式默认是用来操作多条记录的。 List() executeUpdata() 二级缓存的配置包括read-only默认是无效的。 注意hql是没有save方法，如果需要插入数据只能调用session.save()
+

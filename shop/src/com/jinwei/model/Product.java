@@ -2,10 +2,11 @@ package com.jinwei.model;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.Cache;
+
 /**
  * Product entity. @author MyEclipse Persistence Tools
  */
-
 public class Product implements java.io.Serializable {
 
 	// Fields

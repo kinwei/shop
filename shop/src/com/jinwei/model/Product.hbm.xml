@@ -6,6 +6,7 @@
 -->
 <hibernate-mapping package="com.jinwei.model">
     <class name="Product" table="product" catalog="shop">
+    <cache usage="read-write"/>
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="native" />
@@ -39,7 +40,7 @@
             <column name="cid" />
         </property>
         -->
-        <many-to-one name="category" class="Category" lazy="false">
+        <many-to-one name="category" class="Category" lazy="false" outer-join="true" >
         	<column name="cid" />
         </many-to-one>
        
