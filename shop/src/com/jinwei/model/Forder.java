@@ -1,6 +1,8 @@
 package com.jinwei.model;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Forder entity. @author MyEclipse Persistence Tools
@@ -18,10 +20,45 @@ public class Forder implements java.io.Serializable {
 	private Double total;
 	private String post;
 	private String address;
-	private Integer uid;
-	private Integer sid;
+	private User user;
+	private Status status;
+	private Set<Sorder> sorderSet;
+	
+	
+	
 
 	// Constructors
+
+	
+
+	public User getUser() {
+		return user;
+	}
+
+	public Forder(Set<Sorder> sorderSet) {
+		super();
+		this.sorderSet = sorderSet;
+	}
+
+	public Set<Sorder> getSorderSet() {
+		return sorderSet;
+	}
+
+	public void setSoderSet(Set<Sorder> sorderSet) {
+		this.sorderSet = sorderSet;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
 
 	/** default constructor */
 	public Forder() {
@@ -32,19 +69,6 @@ public class Forder implements java.io.Serializable {
 		this.date = date;
 	}
 
-	/** full constructor */
-	public Forder(String name, String phone, String remark, Timestamp date,
-			Double total, String post, String address, Integer uid, Integer sid) {
-		this.name = name;
-		this.phone = phone;
-		this.remark = remark;
-		this.date = date;
-		this.total = total;
-		this.post = post;
-		this.address = address;
-		this.uid = uid;
-		this.sid = sid;
-	}
 
 	// Property accessors
 
@@ -112,20 +136,5 @@ public class Forder implements java.io.Serializable {
 		this.address = address;
 	}
 
-	public Integer getUid() {
-		return this.uid;
-	}
-
-	public void setUid(Integer uid) {
-		this.uid = uid;
-	}
-
-	public Integer getSid() {
-		return this.sid;
-	}
-
-	public void setSid(Integer sid) {
-		this.sid = sid;
-	}
-
+	
 }

@@ -12,8 +12,7 @@ public class Sorder implements java.io.Serializable {
 	private String name;
 	private Double price;
 	private Integer number;
-	private Integer fid;
-	private Integer pid;
+	private Product product;
 
 	// Constructors
 
@@ -21,17 +20,18 @@ public class Sorder implements java.io.Serializable {
 	public Sorder() {
 	}
 
-	/** full constructor */
-	public Sorder(String name, Double price, Integer number, Integer fid,
-			Integer pid) {
-		this.name = name;
-		this.price = price;
-		this.number = number;
-		this.fid = fid;
-		this.pid = pid;
-	}
 
 	// Property accessors
+
+	public Product getProduct() {
+		return product;
+	}
+
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 
 	public Integer getId() {
 		return this.id;
@@ -65,20 +65,5 @@ public class Sorder implements java.io.Serializable {
 		this.number = number;
 	}
 
-	public Integer getFid() {
-		return this.fid;
-	}
-
-	public void setFid(Integer fid) {
-		this.fid = fid;
-	}
-
-	public Integer getPid() {
-		return this.pid;
-	}
-
-	public void setPid(Integer pid) {
-		this.pid = pid;
-	}
 
 }

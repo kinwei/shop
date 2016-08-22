@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import com.jinwei.model.FileImage;
 import com.jinwei.service.AccountService;
 import com.jinwei.service.CategoryService;
+import com.jinwei.service.ForderService;
 import com.jinwei.service.ProductService;
 import com.jinwei.util.FileUpload;
 import com.opensymphony.xwork2.ActionSupport;
@@ -79,6 +80,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,
 	protected CategoryService categoryService;
 	@Resource
 	protected AccountService accountService;
+	@Resource
+	protected ForderService forderService;
 	
 	@Resource
 	protected ProductService productService;
