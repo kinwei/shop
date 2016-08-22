@@ -24,13 +24,10 @@ public class SorderAction extends BaseAction<Sorder> {
 			session.put("forder", new Forder(new HashSet<Sorder>()));
 		}
 		// 3.把商品信息转换成sorder 并且添加到购物车中（判断购物项是否重复）
-		model.setName(product.getName());
-		model.setNumber(1);
-		model.setPrice(product.getPrice());
-		model.setProduct(product);
+		
 		
 		Forder forder = (Forder)session.get("forder");
-		forder.getSorderSet().add(model);
+		forder = sorderService.addSorder(forder, product);
 		//4. 计算商品总价格
 		forder.setTotal(forderService.cluTotal(forder));
 		//5.把新的购物车存储到session中

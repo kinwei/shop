@@ -2,6 +2,10 @@ package com.jinwei.model;
 
 /**
  * Sorder entity. @author MyEclipse Persistence Tools
+ * 当对象存储到硬盘的时候就需要实现序列化接口 序列化的功能就是添加了一个唯一的ID
+ * 这样在反序列化的时候就可以成功的找到相应的对象
+ * 
+ * 容器的关闭并不会导致 session的销毁
  */
 
 public class Sorder implements java.io.Serializable {

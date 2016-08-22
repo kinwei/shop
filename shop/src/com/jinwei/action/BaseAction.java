@@ -18,6 +18,7 @@ import com.jinwei.service.AccountService;
 import com.jinwei.service.CategoryService;
 import com.jinwei.service.ForderService;
 import com.jinwei.service.ProductService;
+import com.jinwei.service.SorderService;
 import com.jinwei.util.FileUpload;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -82,6 +83,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,
 	protected AccountService accountService;
 	@Resource
 	protected ForderService forderService;
+	@Resource
+	protected SorderService sorderService;
 	
 	@Resource
 	protected ProductService productService;
