@@ -17,8 +17,19 @@ public class Sorder implements java.io.Serializable {
 	private Double price;
 	private Integer number;
 	private Product product;
+	private Forder forder;
 
 	// Constructors
+
+	public Forder getForder() {
+		return forder;
+	}
+
+
+	public void setForder(Forder forder) {
+		this.forder = forder;
+	}
+
 
 	/** default constructor */
 	public Sorder() {

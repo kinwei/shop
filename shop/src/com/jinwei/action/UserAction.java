@@ -16,7 +16,13 @@ public class UserAction extends BaseAction<User> {
 			session.put("error", "登录失败");
 			return "ulogin";
 		}else{
-			return "index";
+			session.put("user", model);
+			//根据session中goURL中是否有值来决定跳转
+			if(session.get("goURL") == null){
+				return "index";
+			}else{
+				return "goURL";
+			}
 		}
 	}
 }
