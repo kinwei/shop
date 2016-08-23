@@ -3,29 +3,11 @@
 <html>
 <head>
 	<%@include file="/public/head.jspf"%>
-	<script type="text/javascript">
-		$(function(){
-			// id选择器只能选中第一个
-			$(".text").change(function(){
-				// 1: 验证数据的有效性
-				var number=this.value;  // $(this).val();
-				if(!isNaN(number) && parseInt(number)==number && number>0){
-					// 获取当前商品的id编号
-					var id=$(this).parents("tr:first").attr("lang");
-					// 发送ajax请求,如果get请求会先到浏览器缓存, 返回新的总价格
-					$.post('sorder_alterSorder.action',{'product.id':id,number:number},function(total){
-						$("#total").html('￥' + total);
-					},"text");
-					var price=$(this).parent().prev().html().substring(1);
-					//alert(2.456.toFixed(2));
-					$(this).parent().next().html('￥' + (price*number).toFixed(2));
-				}else{
-					// 重置原来的数据
-					this.value=$(this).attr("lang");
-				}
-			});
-		});
-	</script>
+	<style type="text/css">
+		#dd div{
+			padding: 5px;
+		}
+	</style>
 <body>
 	<div class="wrapper">
 		<div class="header">
@@ -49,7 +31,7 @@
 					<!-- 小购物车 -->
 					<div class="minicart">
 						<a class="minicart_link" href="#"> <span class="item">
-								<b>2</b> 件/ </span> <span class="price"> <b>￥199.80</b> </span> </a>
+								<b>2</b>件/ </span> <span class="price"> <b>￥${sessionScope.forder.total}</b> </span> </a>
 					</div>
 					<!-- 小购物车结束 -->
 					<!-- 搜索框 -->
@@ -122,71 +104,27 @@
 		<!--导航栏结束-->
 		<div class="section_container">
 			<!-- 购物车 -->
-			<div id="shopping_cart">
-				<div class="message success">我的购物车</div>
-				<table class="data-table cart-table" cellpadding="0" cellspacing="0">
-					<tr>
-						<th class="align_center" width="10%">商品编号</th>
-						<th class="align_left" width="35%" colspan="2">商品名称</th>
-						<th class="align_center" width="10%">销售价格</th>
-						<th class="align_center" width="20%">数量</th>
-						<th class="align_center" width="15%">小计</th>
-						<th class="align_center" width="10%">删除</th>
-					</tr>
-					<c:forEach items="${sessionScope.forder.sorderSet}" var="sorder">
-					<tr lang="${sorder.product.id}">
-						<td class="align_center">
-							${sorder.product.id}
-						</td>
-						<td width="80px"><img src="${shop}/image/${sorder.product.pic}" width="80"
-							height="80" />
-						</td>
-						<td class="align_left">
-							${sorder.name}
-						</td>
-						<td class="align_center vline">￥${sorder.price}</td>
-						<td class="align_center vline">
-							<input class="text" style="height: 20px;" value="${sorder.number}" lang="${sorder.number}">		
-						</td>
-						<td class="align_center vline">
-							￥${sorder.price*sorder.number}
-						</td>
-						<td class="align_center vline">
-							<a href="#" class="remove"></a>
-						</td>
-					</tr>
-					</c:forEach>
-				</table>
-				<!-- 结算 -->
-				<div class="totals">
-					<table id="totals-table">
-						<tbody>
-							<tr>
-								<td width="60%" colspan="1" class="align_left total"><strong>总计</strong>
-								</td>
-								<td class="align_right" style=""><span class="total"><strong id="total">￥${forder.total}</strong>
-								</span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="action_buttonbar">
-						<button type="button" title="" class="checkout fr"
-							style="background-color: #f38256;">
-							<a href="${shop}/user/confirm.jsp">提交订单</a>
-						</button>
-						<button type="button" title="" class=" fr">
-							<font><font>清空购物车</font>
-							</font>
-						</button>
-						<button type="button" title="" class="continue fr">
-							<font><a href="${shop}/index.jsp">继续购物</a></font>
-							</font>
-						</button>
-						<div style="clear:both"></div>
+			<div id="dd" class="action_buttonbar" style="text-align:center;">
+				<form method="post" action="${shop}/user_login.action">
+					<div>
+						<label for="login">账号:&nbsp;</label> 
+						<input type="text" name="login" />
 					</div>
-				</div>
+					<div>
+						<label for="pass">密码:&nbsp</label> 
+						<input type="pass" name="pass" />
+					</div>
+					<div>
+						${error}  
+					</div>
+					<div>
+						<input type="submit" value="登陆" style="width:60px;height:30px" />
+						<input type="button" value="注册" onclick="alert('---自己实现----')" style="width:60px;height:30px" />
+					</div>
+			   </form>
+			   <div style="clear:both"></div>
 			</div>
+		</div>
 			<!-- 导航栏结束 -->
 			<div class="footer_container">
 				<div class="footer">
@@ -234,6 +172,7 @@
 							</ul></li>
 					</ul>
 				</div>
+			</div>
 			</div>
 </body>
 </html>

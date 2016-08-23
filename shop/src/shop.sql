@@ -393,3 +393,4 @@ SELECT * FROM role;
 SELECT * FROM privilege_role;
 SELECT * FROM account_role;
 SELECT * FROM product;
+SELECT * FROM user;

@@ -28,7 +28,7 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements
 			}
 		}
 		
-		if(isHave){
+		if(!isHave){
 			//说明当前购物项 在购物车中是不存在的 新添加即可
 			forder.getSorderSet().add(sorder);
 		}
