@@ -18,3 +18,12 @@ save():添加数据直接交给数据库 因为read-only是无效
 HQL：此方式默认不支持缓存
 list():查询多个  只存不取 交给二级缓存是给get load()使用
 executeUpdate():不支持二级缓存 直接到数据库更新 Hibernate会保证数据库与缓存同步
+
+
+pragma: 设置页面是否缓存 用于HTTP1.0协议
+cache-control：设置页面是否缓存 用于http1.1协议
+expires:如果支持缓存 则有效期
+
+并不是所有的容器都支持meta 例如tomcat就不解析 所以设置无效
+no-cache：仅仅支持IE不支持Firefox和Chrome， no-store支持所有浏览器post方式，但是
+当前访问缓存页面的请求为post请求时，返回时会出现“页面过期”，但是get方式访问返回时 直接到服务器加载新页面 而不会提示“页面过期”

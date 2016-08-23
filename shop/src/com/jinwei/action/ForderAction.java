@@ -26,11 +26,11 @@ public class ForderAction extends BaseAction<Forder>{
 		forder.setName(model.getName());
 		forder.setPhone(model.getPhone());
 		forder.setRemark(model.getRemark());
-		forder.setUser(model.getUser());
-		forder.setStatus(model.getStatus());
 		//级联入库（需要在XML中配置）需要sorder关联forder，在SorderServiceImpl中追加sorder.setForder(forder)
 		forderService.save(forder);
 	*/
+		model.setUser(model.getUser());
+		model.setStatus(model.getStatus());
 		forderService.save(model);
 		return "bank";
 	}
