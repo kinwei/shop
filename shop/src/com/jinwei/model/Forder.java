@@ -44,7 +44,7 @@ public class Forder implements java.io.Serializable {
 		return sorderSet;
 	}
 
-	public void setSoderSet(Set<Sorder> sorderSet) {
+	public void setSorderSet(Set<Sorder> sorderSet) {
 		this.sorderSet = sorderSet;
 	}
 

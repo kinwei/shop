@@ -32,6 +32,10 @@
 	<mapping resource="com/jinwei/model/Category.hbm.xml" />
 	<mapping resource="com/jinwei/model/Account.hbm.xml" />
 	<mapping resource="com/jinwei/model/Product.hbm.xml" />
+	<mapping resource="com/jinwei/model/User.hbm.xml" />
+	<mapping resource="com/jinwei/model/Forder.hbm.xml" />
+	<mapping resource="com/jinwei/model/Sorder.hbm.xml" />
+	<mapping resource="com/jinwei/model/Status.hbm.xml" />
 	<!-- 配置哪些类支持缓存 -->
 	<class-cache usage="read-write" class="com.jinwei.model.Product"/>
 	<class-cache usage="read-write" class="com.jinwei.model.Category"/>
