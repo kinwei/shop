@@ -5,5 +5,9 @@ import com.jinwei.model.FileImage;
 public interface FileUpload {
 
 	public abstract String uploadFile(FileImage fileImage);
+	
+	public  String[] getBankImage();
+		
+	
 
 }

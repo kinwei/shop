@@ -1,6 +1,7 @@
 package com.jinwei.util;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -13,13 +14,15 @@ import com.jinwei.model.FileImage;
 
 @Component("fileUpload")
 public class FileUploadUtil implements FileUpload {
-	
+	@Value("#{prop.basePath+prop.filePath}")
 	private String filepath ;//= "D:/";
 	
-	@Value("#{prop.filePath}")
-	public void setFilepath(String filepath) {
-		this.filepath = filepath;
-	}
+	@Value("#{prop.basePath+prop.bankPath}")
+	private String bankPath ;//= "D:/";
+	
+	//public void setFilepath(String filepath) {
+	//	this.filepath = filepath;
+	//}
 	
 	private String getFileExt(String fileName){
 		return FilenameUtils.getExtension(fileName);
@@ -44,5 +47,18 @@ public class FileUploadUtil implements FileUpload {
 			fileImage.getFile().delete();
 		}
 	}
+
+	@Override
+	public String[] getBankImage(){
+		return new File(bankPath).list(new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File dir, String name) {
+				// TODO Auto-generated method stub
+				return name.endsWith(".gif");
+			}
+		});
+	}
+	
 	
 }

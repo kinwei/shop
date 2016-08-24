@@ -36,6 +36,12 @@
   </head>
   
   <body>
-  银行支付页面   
+  lalala
+  <div style="width: 750px;">
+  	<c:forEach items="${applicationScope.bankList}" var="bankImage">
+  		<input type="radio" value="" name="${fn:substring(bankImage,0,fn:indexOf(bankImage,'.')) }">
+  		<img src="${shop}/images/bank/${bankImage}" />
+  	</c:forEach>  
+  </div>
   </body>
 </html>
