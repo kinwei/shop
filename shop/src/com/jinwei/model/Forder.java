@@ -34,6 +34,11 @@ public class Forder implements java.io.Serializable {
 	public User getUser() {
 		return user;
 	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 
 	public Forder(Set<Sorder> sorderSet) {
 		super();
@@ -48,10 +53,7 @@ public class Forder implements java.io.Serializable {
 		this.sorderSet = sorderSet;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-
+	
 	public Status getStatus() {
 		return status;
 	}

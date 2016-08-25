@@ -14,13 +14,14 @@
          http://www.springframework.org/schema/context/spring-context-3.0.xsd">
          
     <context:component-scan base-package="com.jinwei.." />
-    
+    <!-- 
     <context:property-placeholder location="classpath:conn.properties"/>
+     -->
     
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     	<property name="locations">
     		<array>
-    			<value>classpath:conn.properties</value>
+    			<value>classpath:remote.properties</value>
     		</array>
     	</property>
     </bean>

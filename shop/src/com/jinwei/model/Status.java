@@ -8,6 +8,11 @@ public class Status implements java.io.Serializable {
 
 	// Fields
 
+	public Status(Integer id) {
+		super();
+		this.id = id;
+	}
+
 	private Integer id;
 	private String status;
 
