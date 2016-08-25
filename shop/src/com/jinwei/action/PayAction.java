@@ -65,10 +65,13 @@ public class PayAction extends BaseAction<Object> implements ParameterAware{
 		
 		if(isOk){
 			//更改订单状态
+			forderService.updateStatusById(Integer.parseInt(backData.getR6_Order()), 2);
 			//根据user的邮箱 发送邮件
 			String address = backData.getR8_MP().split(".")[0];
 			emailUtil.sendEmail(address, backData.getR6_Order());
 			//发送手机短信
+			String number = backData.getR8_MP().split(".")[1];
+			messageUtil.sendMessage(number, backData.getR6_Order());
 			System.out.println("---------ssss-------");
 		}else {
 			System.out.println("-----ffff-------");

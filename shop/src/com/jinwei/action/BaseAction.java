@@ -23,6 +23,7 @@ import com.jinwei.service.SorderService;
 import com.jinwei.service.UserService;
 import com.jinwei.util.FileUpload;
 import com.jinwei.util.EmailUtil;
+import com.jinwei.util.MessageUtil;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -100,6 +101,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,
 	
 	@Resource
 	protected EmailUtil emailUtil;
+	@Resource
+	protected MessageUtil messageUtil;
 	
 /*	public void setCategoryService(CategoryService categoryService) {
 		this.categoryService = categoryService;
