@@ -19,6 +19,6 @@ public interface PayService {
 	public abstract Map<String, Object> saveDataToRequest(
 			Map<String, Object> request, SendData sendData);
 
-	boolean checkBackData(BackData backData);
+	public abstract boolean checkBackData(BackData backData);
 
 }
