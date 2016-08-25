@@ -29,6 +29,7 @@
     	<property name="locations">
     		<array>
     			<value>classpath:public.properties</value>
+    			<value>classpath:pay.properties</value>
     		</array>
     	</property>
     </bean>

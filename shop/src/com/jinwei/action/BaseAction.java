@@ -17,6 +17,7 @@ import com.jinwei.model.FileImage;
 import com.jinwei.service.AccountService;
 import com.jinwei.service.CategoryService;
 import com.jinwei.service.ForderService;
+import com.jinwei.service.PayService;
 import com.jinwei.service.ProductService;
 import com.jinwei.service.SorderService;
 import com.jinwei.service.UserService;
@@ -91,6 +92,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,
 	
 	@Resource
 	protected ProductService productService;
+	@Resource
+	protected PayService payService;
 	@Resource
 	protected FileUpload fileUpload;
 	
