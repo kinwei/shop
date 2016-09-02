@@ -22,7 +22,7 @@
         <property name="date" type="java.sql.Timestamp">
             <column name="date" length="19" not-null="true" />
         </property>
-        <property name="total" type="java.lang.Double">
+        <property name="total" type="java.math.BigDecimal">
             <column name="total" precision="8" />
         </property>
         <property name="post" type="java.lang.String">

@@ -1,5 +1,7 @@
 package com.jinwei.model;
 
+import java.math.BigDecimal;
+
 /**
  * Sorder entity. @author MyEclipse Persistence Tools
  * 当对象存储到硬盘的时候就需要实现序列化接口 序列化的功能就是添加了一个唯一的ID
@@ -14,7 +16,7 @@ public class Sorder implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	private Integer number;
 	private Product product;
 	private Forder forder;
@@ -64,13 +66,17 @@ public class Sorder implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Double getPrice() {
-		return this.price;
+	
+
+	public BigDecimal getPrice() {
+		return price;
 	}
 
-	public void setPrice(Double price) {
+
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+
 
 	public Integer getNumber() {
 		return this.number;

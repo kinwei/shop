@@ -164,7 +164,7 @@
 							<tr>
 								<td width="60%" colspan="1" class="align_left total"><strong>总计</strong>
 								</td>
-								<td class="align_right" style=""><span class="total"><strong id="total">￥${forder.total}</strong>
+								<td class="align_right" style=""><span class="total"><strong id="total">￥${sessionScope.forder.total}</strong>
 								</span>
 								</td>
 							</tr>

@@ -394,3 +394,4 @@ SELECT * FROM privilege_role;
 SELECT * FROM account_role;
 SELECT * FROM product;
 SELECT * FROM user;
+SELECT sum (s.number),s.name FROM Sorder s JOIN s.product p GROUP BY p.id;

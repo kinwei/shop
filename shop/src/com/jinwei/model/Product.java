@@ -1,5 +1,6 @@
 package com.jinwei.model;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import org.hibernate.annotations.Cache;
@@ -21,7 +22,7 @@ public class Product implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	private String pic;
 	private String remark;
 	private String xremark;
@@ -70,11 +71,12 @@ public class Product implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Double getPrice() {
-		return this.price;
+	
+	public BigDecimal getPrice() {
+		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 

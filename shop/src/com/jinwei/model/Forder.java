@@ -1,5 +1,6 @@
 package com.jinwei.model;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +18,7 @@ public class Forder implements java.io.Serializable {
 	private String phone;
 	private String remark;
 	private Timestamp date;
-	private Double total;
+	private BigDecimal total;
 	private String post;
 	private String address;
 	private User user;
@@ -114,11 +115,13 @@ public class Forder implements java.io.Serializable {
 		this.date = date;
 	}
 
-	public Double getTotal() {
-		return this.total;
+	
+
+	public BigDecimal getTotal() {
+		return total;
 	}
 
-	public void setTotal(Double total) {
+	public void setTotal(BigDecimal total) {
 		this.total = total;
 	}
 

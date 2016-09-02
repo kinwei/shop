@@ -13,7 +13,7 @@
         <property name="name" type="java.lang.String">
             <column name="name" length="20" />
         </property>
-        <property name="price" type="java.lang.Double">
+        <property name="price" type="java.math.BigDecimal">
             <column name="price" precision="10" />
         </property>
         <property name="number" type="java.lang.Integer">

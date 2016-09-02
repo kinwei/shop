@@ -1,6 +1,8 @@
 package com.jinwei.action;
 
+import java.io.ByteArrayInputStream;
 import java.util.HashSet;
+import java.util.List;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -9,10 +11,21 @@ import org.springframework.stereotype.Controller;
 import com.jinwei.model.Forder;
 import com.jinwei.model.Product;
 import com.jinwei.model.Sorder;
+import com.opensymphony.xwork2.ActionContext;
+import com.sun.mail.iap.ByteArray;
 
 @Controller
 @Scope("prototype")
 public class SorderAction extends BaseAction<Sorder> {
+	
+	public String updateSorder(){
+		Forder forder = (Forder)session.get("forder");
+		forder = sorderService.updateSorder(model, forder);
+		forder.setTotal(forderService.cluTotal(forder));
+		session.put("forder", forder);
+		inputStream = new ByteArrayInputStream(forder.getTotal().toString().getBytes());
+		return "stream";
+	}
 	
 	public  String addSorder(){
 		// 1.根据product.id获取相应商品信息
@@ -34,5 +47,12 @@ public class SorderAction extends BaseAction<Sorder> {
 		session.put("forder", forder);
 		
 		return "showCar";
+	}
+	
+	public String querySale(){
+		System.out.println("-----00-----");
+		List<Object> jsonList = sorderService.querySale(model.getNumber());
+		ActionContext.getContext().getValueStack().push(jsonList);
+		return "jsonList";
 	}
 }

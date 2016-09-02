@@ -46,6 +46,25 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements
 		return sorder;
 	}
 
+	@Override
+	public Forder updateSorder(Sorder sorder, Forder forder) {
+		for(Sorder temp:forder.getSorderSet()){
+			if(temp.getProduct().getId().equals(sorder.getProduct().getId())){
+				temp.setNumber(sorder.getNumber());
+			}
+		}
+		return forder;
+	}
+
+	@Override
+	public List<Object> querySale(int number) {
+		String hql = "SELECT s.name,sum(s.number) FROM Sorder s JOIN s.product GROUP BY s.product.id";
+		return getSession().createQuery(hql).setFirstResult(0).setMaxResults(number).list();
+		
+	}
+
+
+
 	
 
 }

@@ -6,6 +6,9 @@
 			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
 			<result name="index">/index.jsp</result>
 			<result name="ulogin" type="redirect">/ulogin.jsp</result>
+			<result name="stream" type="stream">
+				<param name="inputName">inputStream</param>
+			</result>
 		</global-results>
 			
 		<action name="category_*" class="categoryAction" method="{1}">
@@ -58,6 +61,7 @@
 		
 		<action name="sorder_*" class="sorderAction" method="{1}">
 			<result name="showCar" type="redirect">/showCar.jsp</result>
+			<result name="jsonList" type="json" />
 		</action>
 		
 		<action name="user_*" class="userAction" method="{1}">
