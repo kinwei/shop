@@ -58,8 +58,7 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements
 
 	@Override
 	public List<Object> querySale(int number) {
-		String hql = "SELECT s.name,sum(s.number) FROM Sorder s JOIN s.product GROUP BY s.product.id";
-		return getSession().createQuery(hql).setFirstResult(0).setMaxResults(number).list();
+		return sorderDao.querySale(number);
 		
 	}
 
