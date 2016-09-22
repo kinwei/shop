@@ -67,12 +67,6 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 	public List<T> query() {
 		String hql = "from " + clazz.getSimpleName();
 		return getSession().createQuery(hql).list();
-	}
-
-	
-	
-
-	
-	
+	}	
 	
 }

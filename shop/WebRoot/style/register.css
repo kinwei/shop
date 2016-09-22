@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/*注册页面*/
+.reg_logo .comWidth{width:630px;}
+.regBox{width:628px; margin:10px auto; border:1px solid #ccc;}
+.reg_item{ font-size:14px; line-height:34px; font-family:"宋体"; width:110px; text-align:right; float:left;}
+.reg_item i{color:red; font-style:normal; margin-right:5px;}
+.input_item{ width:306px; float:left;}
+.regBox li{ height:70px;}
+.login_btn{width:309px; height:36px; background: url(../images/icon/log_btn.jpg) left top no-repeat; margin-left:110px;}
+

@@ -117,6 +117,8 @@ public class Forder implements java.io.Serializable {
 
 	
 
+	
+
 	public BigDecimal getTotal() {
 		return total;
 	}

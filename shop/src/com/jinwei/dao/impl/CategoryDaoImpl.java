@@ -43,9 +43,7 @@ public class CategoryDaoImpl extends BaseDaoImpl<Category> implements CategoryDa
 
 	@Override
 	public List<Category> queryByHot(boolean hot) {
-		// TODO Auto-generated method stub
 		String hql = "FROM Category c WHERE c.hot=:hot";
-		
 		return getSession().createQuery(hql).setBoolean("hot", hot).list();
 	}
 	

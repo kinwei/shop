@@ -45,7 +45,7 @@ public class UserFilter implements Filter {
 			
 			//非法请求 跳转到登录页面
 			req.getSession().setAttribute("error", "非法请求，请登录");
-			res.sendRedirect(req.getContextPath() + "/ulogin.jsp");
+			res.sendRedirect(req.getContextPath() + "/login.jsp");
 		}else{
 			//如果有下一个过滤器 则跳转 否则直接跳到目标页面
 			chain.doFilter(request, response);

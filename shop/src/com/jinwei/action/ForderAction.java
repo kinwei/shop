@@ -35,7 +35,7 @@ public class ForderAction extends BaseAction<Forder>{
 		//forderService.save(forder);
 		forderService.save(model);
 		
-		session.put("oldForder", session.remove("forder")); 
+		session.put("oldForder", session.get("forder")); 
 		
 		
 		
