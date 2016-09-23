@@ -29,5 +29,15 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao{
 		.uniqueResult();
 		
 	}
+
+	@Override
+	public boolean queryByLoginName(User user) {
+		String hql = "FROM User u where u.login=:login";
+		List<User> user_list = getSession().createQuery(hql).setString("login", user.getLogin()).list();
+		if(user_list.size() > 0){
+			return true;
+		}
+		return false;
+	}
 	
 	}

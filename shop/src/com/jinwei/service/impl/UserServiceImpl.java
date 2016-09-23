@@ -23,5 +23,13 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 		return userDao.login(user);
 		
 	}
+
+	@Override
+	public boolean queryByLoginName(User user) {
+		// TODO Auto-generated method stub
+		return userDao.queryByLoginName(user);
+	}
+	
+	
 	
 	}
