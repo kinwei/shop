@@ -41,6 +41,13 @@ public class UserAction extends BaseAction<User> {
 		return "stream";
 	}
 	
+	public String logout(){
+		if(session.get("user") != null){
+			session.remove("user");
+			
+		}
+		return "logout_success";
+	}
 	
 	public String add(){
 		String login = (String) request.get("login");
@@ -53,4 +60,5 @@ public class UserAction extends BaseAction<User> {
 		userService.save(user);
 		return "add_success";
 	}
+	
 }
