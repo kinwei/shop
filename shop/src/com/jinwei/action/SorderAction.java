@@ -23,7 +23,7 @@ public class SorderAction extends BaseAction<Sorder> {
 		forder = sorderService.updateSorder(model, forder);
 		forder.setTotal(forderService.cluTotal(forder));
 		session.put("forder", forder);
-		inputStream = new ByteArrayInputStream(forder.getTotal().toString().getBytes());
+		inputStream = new ByteArrayInputStream((""+forder.getTotal()).getBytes());
 		return "stream";
 	}
 	

@@ -33,6 +33,7 @@ public class UserAction extends BaseAction<User> {
 		String userName = (String) request.get("login");
 		User user = new User();
 		user.setLogin(userName);
+		
 		if(userService.queryByLoginName(user)){
 			inputStream = new ByteArrayInputStream("true".getBytes());
 		}else{

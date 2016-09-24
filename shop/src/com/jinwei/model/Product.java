@@ -22,7 +22,7 @@ public class Product implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private BigDecimal price;
+	private double price;
 	private String pic;
 	private String remark;
 	private String xremark;
@@ -72,11 +72,13 @@ public class Product implements java.io.Serializable {
 	}
 
 	
-	public BigDecimal getPrice() {
+	
+
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

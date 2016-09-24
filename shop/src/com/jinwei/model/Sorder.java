@@ -16,7 +16,7 @@ public class Sorder implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private BigDecimal price;
+	private double price;
 	private Integer number;
 	private Product product;
 	private Forder forder;
@@ -68,12 +68,13 @@ public class Sorder implements java.io.Serializable {
 
 	
 
-	public BigDecimal getPrice() {
+	
+	public double getPrice() {
 		return price;
 	}
 
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

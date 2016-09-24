@@ -49,7 +49,7 @@ public class PayAction extends BaseAction<Object> implements ParameterAware{
 		Forder forder = (Forder)session.get("oldForder");
 		User user = (User)session.get("user");
 		sendDate.setP2_Order(forder.getId().toString());
-		sendDate.setP3_Amt(forder.getTotal().toString());
+		sendDate.setP3_Amt(forder.getTotal()+"");
 		sendDate.setPa_MP(user.getEmail() + "," + user.getPhone());
 		//2.对参数进行追加
 		//3.加密获取签名

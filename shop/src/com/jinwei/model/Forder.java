@@ -18,7 +18,7 @@ public class Forder implements java.io.Serializable {
 	private String phone;
 	private String remark;
 	private Timestamp date;
-	private BigDecimal total;
+	private double total;
 	private String post;
 	private String address;
 	private User user;
@@ -119,11 +119,13 @@ public class Forder implements java.io.Serializable {
 
 	
 
-	public BigDecimal getTotal() {
+	
+
+	public double getTotal() {
 		return total;
 	}
 
-	public void setTotal(BigDecimal total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 

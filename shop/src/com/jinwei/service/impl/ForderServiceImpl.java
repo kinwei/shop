@@ -1,6 +1,5 @@
 package com.jinwei.service.impl;
 
-import java.math.BigDecimal;
 
 import org.springframework.stereotype.Service;
 
@@ -14,14 +13,7 @@ public class ForderServiceImpl extends BaseServiceImpl<Forder> implements
 
 
 
-	@Override
-	public BigDecimal cluTotal(Forder forder) {
-		BigDecimal total = new BigDecimal(0.00);
-		for(Sorder temp:forder.getSorderSet()){
-			total.add(temp.getPrice().multiply(new BigDecimal(temp.getNumber())));
-		}
-		return total;
-	}
+	
 
 	@Override
 	public void updateStatusById(int id, int sid) {
@@ -29,4 +21,15 @@ public class ForderServiceImpl extends BaseServiceImpl<Forder> implements
 		
 	}
 
-}
+	@Override
+	public double cluTotal(Forder forder) {
+		
+			double total = 0.0;
+			for(Sorder temp:forder.getSorderSet()){
+				total += temp.getNumber() * temp.getPrice();
+			}
+			return total;
+		}
+	}
+
+
